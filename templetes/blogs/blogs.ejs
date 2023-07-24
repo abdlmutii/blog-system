@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title><%= title %> | Abdlmu'tii</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="image" property="og:image" content="<%= img %>">
-  <meta name="theme-color" content="#9966ff" />
-  <meta property="og:title" content="<%= title %>" />
-<meta property="og:description" content="<%= desc %>" />
-<meta name="description" property="og:description" content="<%= desc %>">
-<meta property="og:image" content="<%= img %>" />
-<meta property="og:url" content="https://abdlmutii.repl.co" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="<%= category %>" />
-<meta property="og:article:author" content="Abdlmu'tii" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://kit.fontawesome.com/3000af0e50.js" crossorigin="anonymous"></script>
+   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+  font-family: 'm-reg';
+  src: url('../Minomu-Regular.otf') format('opentype');
+}
+    @font-face {
+  font-family: 'm-bold';
+  src: url('../Minomu-Black.otf') format('opentype');
+    }
+  body {
+  margin: 0;
+  padding: 0;
+  }
+
+  h1 {
+    font-family: 'm-bold';
+  }
+    </style>
+    <title>Blogs | Abdlmu'tii</title>
 </head>
-<body class='bg-white text-black'>
-    <nav class="bg-black flex items-center justify-between flex-wrap py-4 px-6">
+<body>
+  <nav class="bg-black flex items-center justify-between flex-wrap py-4 px-6">
   <div class="flex items-center">
     <span class="text-gray-500 mr-2">/</span>
     <span class="text-white font-bold">Blogs</span>
@@ -32,28 +41,39 @@
   </div>
   <div class="hidden md:block">
     <div class="ml-4 flex items-center">
-      <a href="/" class="text-white hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">Portfolio</a>
-      <a href="/resume" class="text-white hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">Resume</a>
-      <a href="/contact" class="text-white hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+      <a href="#" class="text-white hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">Portfolio</a>
+      <a href="#" class="text-white hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">Resume</a>
+      <a href="#" class="text-white hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
     </div>
   </div>
-    </nav>
+</nav>
 
-  <div class="flex bg-black text-white flex-col md:flex-row">
-        <div class="md:w-1/2 p-4">
-            <img src="<%= img %>" alt="Blog post image" class="w-full rounded-lg">
-        </div>
-        <div class="md:w-1/2 p-4 flex flex-col justify-center">
-            <p class="text-sm font-medium"><%= category %></p>
-            <h1 class="text-3xl font-bold mt-2"><%= title %></h1>
-            <p class="text-base text-gray-400 font-medium mt-3 mb-2"><%= desc %></p>
-        </div>
+  <div class="relative h-[350px]">
+  <div class="absolute inset-0 bg-gray-400 filter brightness-50 w-[100%]">
+    <img src="<%= h.img %>" alt="Highlights" class="h-full object-cover w-[100%]">
   </div>
+  <div class="absolute bottom-0 left-0 p-6 text-white">
+    <div class="text-sm font-bold tracking-[0.3rem] uppercase"><%= h.category %></div>
+    <h1 class="text-4xl font-bold mt-2"><%= h.title %></h1>
+  </div>
+</div>
 
-  <div class="font-medium mx-6 text-base mt-4 md:mx-8">
-   <%- content %>
+<div class="container mx-auto py-8 px-4">
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+    <% blogs.reverse().forEach((b, index) => { %>
+      <div class="overflow-hidden">
+        <a href="/blog/<%= b.id %>"><img src="<%= b.img %>" alt="Blog post image" class="rounded-lg w-full"></a>
+        <div class="px-1 py-2">
+          <a href="/blog/<%= b.id %>"><p class="mt-[10px] text-[13px] text-gray-500 uppercase font-bold"><%= b.category %></p></a>
+          <a href="/blog/<%= b.id %>"><h2 class="text-lg font-bold"><%= b.title %></h2></a>
+          <a href="/blog/<%= b.id %>"><p class="text-sm mt-[3px]"><%= b.desc %></p></a>
+        </div>
+      </div>
+    <% }) %>
   </div>
-  <footer class="bg-black py-6 mt-4">
+</div>
+
+<footer class="bg-black py-6">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between flex-wrap">
       <div class="w-full md:w-1/4 mb-4 md:mb-0">
@@ -108,4 +128,4 @@
 </script>
 
 </body>
-  </html>
+    </html>
