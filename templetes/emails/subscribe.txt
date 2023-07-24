@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Subscribe to my blog!</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5;">
+	<h1 style="text-align:center;">One more step.</h1>
+	<div style="text-align:center;">
+		<p style="margin-bottom: 20px;">Thanks for providing your email address! We received your request to subscribe to our blog feed. If you meant to subscribe, simply click the button below to confirm:</p>
+		<a href="https://abdlmutii.repl.co/subscribe/userrtoken" style="background-color: #9966ff; border: none; color: white; padding: 12px 24px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin-bottom: 20px;">Confirm subscription</a>
+		<p>If you didn't mean to subscribe, or if you received this email by mistake, you can simply ignore it. We won't subscribe you to our blog feed unless you confirm your subscription by clicking the button above.</p>
+	</div>
+</body>
+</html
