@@ -1,5 +1,6 @@
 # Abdlmu'tii CMS
 A custom blogging system &amp; content management system (CMS)
+Use it to post your blogs!
 
 # Try it
 https://abdlmutii.repl.co/blogs
